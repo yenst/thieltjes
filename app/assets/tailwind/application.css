@@ -7,7 +7,7 @@
 
   @media (min-width: 768px) {
     [data-sidebar-collapsed="true"] .layout-content {
-      padding-left: theme("spacing.20");
+      padding-left: theme("spacing.16");
     }
   }
 
