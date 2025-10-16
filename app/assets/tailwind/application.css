@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@layer utilities {
+  [data-sidebar-collapsed="true"] #app-sidebar {
+    width: theme("spacing.16");
+  }
+
+  @media (min-width: 768px) {
+    [data-sidebar-collapsed="true"] .layout-content {
+      padding-left: theme("spacing.20");
+    }
+  }
+
+  [data-sidebar-collapsed="true"] .sidebar-label {
+    display: none;
+  }
+
+  [data-sidebar-collapsed="true"] .sidebar-link {
+    justify-content: center;
+    padding-left: theme("spacing.2");
+    padding-right: theme("spacing.2");
+  }
+
+  [data-sidebar-collapsed="true"] .collapse-icon {
+    transform: rotate(180deg);
+  }
+}

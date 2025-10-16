@@ -22,19 +22,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-  <header>
-   <% if authenticated? %>
-    Signed in as <strong><%= Current.user.email_address %></strong>
-    <%= button_to "Sign out", session_path, method: :delete %>
-<% else %>
-    <%= link_to "Sign in", new_session_path %>
-<% end %>
-  </header>
-<main class="mx-auto max-w-5xl px-4 py-8">
-<%= yield %>
+  <body class="bg-gray-50" data-controller="sidebar" data-sidebar-collapsed-value="false">
+    <%= render "layouts/sidebar" %>
 
-  </main>
- 
+    <div class="layout-content min-h-screen transition-all md:pl-64" data-sidebar-target="content">
+      <%= render "layouts/app_header" %>
+
+      <main class="px-4 py-6 md:px-8">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
